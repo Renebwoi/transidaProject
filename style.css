@@ -551,7 +551,7 @@ main > section.ourWork {
 
 main > section.showGallery {
   height: 500px;
-  background-color: aquamarine;
+  /* background-color: aquamarine; */
   overflow-x: hidden;
   position: relative;
 
@@ -620,6 +620,7 @@ main > section.showGallery {
 }
 
 main > section.pricingSection {
+  margin-top: 100px;
   height: 600px;
   /* background-color: coral; */
   display: flex;
@@ -629,11 +630,13 @@ main > section.pricingSection {
   > h3 {
     font-size: 18px;
     color: var(--special-orange);
+    margin-bottom: 30px;
   }
   > h2 {
     font-size: 40px;
     font-weight: 700;
     text-align: center;
+    margin-bottom: 30px;
   }
 
   section.pricingPlanCardHolder {
@@ -646,7 +649,7 @@ main > section.pricingSection {
       flex-direction: column;
       align-items: center;
       width: clamp(250px, 400px, 500px);
-      padding: 30px;
+      padding: 30px 50px;
       /* row-gap: 20px; */
       box-shadow: 0px 0px 50px 0px rgba(0, 0, 0, 0.1);
       position: relative;
@@ -660,6 +663,30 @@ main > section.pricingSection {
         color: white;
         padding: 10px 20px;
       }
+      > h3.priceTitle::before {
+        content: " ";
+        position: absolute;
+        width: 0px;
+        height: 0px;
+        /* background-color: red; */
+        top: -20px;
+        left: -20px;
+        border-left: 20px solid transparent;
+        border-top: 20px solid transparent;
+        border-bottom: 20px solid var(--special-orange);
+      }
+      > h3.priceTitle:after {
+        content: " ";
+        position: absolute;
+        width: 0px;
+        height: 0px;
+        /* background-color: red; */
+        top: -20px;
+        right: -20px;
+        border-right: 20px solid transparent;
+        border-top: 20px solid transparent;
+        border-bottom: 20px solid var(--special-orange);
+      }
 
       > h2.priceAmount {
         font-size: 40px;
@@ -672,6 +699,23 @@ main > section.pricingSection {
         border: 1.5px dashed rgba(113, 113, 113, 0.833);
         margin: 20px 0px;
         width: 90%;
+      }
+
+      > ul.pricingPlanPoints {
+        display: flex;
+        flex-direction: column;
+        text-align: left;
+        width: 100%;
+        margin-top: 20px;
+
+        li {
+          margin-bottom: 30px;
+        }
+      }
+      > div {
+        display: flex;
+        justify-content: start;
+        width: 100%;
       }
     }
   }
