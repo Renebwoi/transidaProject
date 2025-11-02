@@ -621,7 +621,7 @@ main > section.showGallery {
 
 main > section.pricingSection {
   margin-top: 100px;
-  height: 600px;
+  height: fit-content;
   /* background-color: coral; */
   display: flex;
   flex-direction: column;
@@ -707,6 +707,21 @@ main > section.pricingSection {
         text-align: left;
         width: 100%;
         margin-top: 20px;
+        /* list-style-type: "✔"; */
+        list-style: none;
+        padding-left: 0;
+
+        li::before {
+          content: "";
+          display: inline-block;
+          width: 18px; /* adjust to reduce/increase icon size */
+          height: 18px;
+          margin-right: 12px;
+          vertical-align: middle;
+          background-image: url("images/icons8-done-26.png");
+          background-size: contain;
+          background-repeat: no-repeat;
+        }
 
         li {
           margin-bottom: 30px;
@@ -716,45 +731,179 @@ main > section.pricingSection {
         display: flex;
         justify-content: start;
         width: 100%;
+        /* background-color: black; */
+
+        a {
+          text-decoration: none;
+          color: white;
+          font-weight: 700;
+          font-size: 16px;
+          display: flex;
+          align-items: center;
+          column-gap: 5px;
+          /* margin-bottom: 50px; */
+          transition-duration: 0.5s;
+
+          padding: 15px 20px;
+          background-color: var(--special-blue);
+
+          img {
+            width: 20px;
+            height: 20px;
+            transition-duration: 0.5s;
+            transform: rotate(45deg);
+          }
+        }
+        a:hover {
+          color: var(--special-orange);
+          img {
+            transform: rotate(0deg);
+          }
+        }
+      }
+    }
+
+    > section.middlePricingPlanCard {
+      background-image: url("images/bg-2.jpg");
+      color: white;
+
+      > h3.priceTitle {
+        background-color: var(--special-orange);
       }
     }
   }
+}
 
-  /* Keyframes Section */
-  /* For show gallery */
-  @keyframes textSlightMove {
-    0% {
-      transform: translateX(0px);
+main > section.statisticsSection {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 400px;
+  position: relative;
+  background-image: url("images/bg-2.jpg");
+  margin-top: 250px;
+  z-index: -2;
+
+  ::before {
+    content: " ";
+    position: absolute;
+    width: 100%;
+    background-color: #293e9c8c;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1;
+  }
+  > h3 {
+    color: var(--special-orange);
+    font-size: 18px;
+    margin-bottom: 30px;
+  }
+  > h2 {
+    font-size: 40px;
+    color: white;
+    text-align: center;
+    /* text-wrap: balance; */
+  }
+
+  > section.statisticCard {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+
+    width: clamp(200px, 250px, 300px);
+    aspect-ratio: 2/1;
+    padding: 30px;
+
+    > div {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      > h2 {
+        color: var(--special-orange);
+      }
     }
-    25% {
-      transform: translateX(-40px);
-    }
-    50% {
-      transform: translateX(-40px);
-    }
-    75% {
-      transform: translateX(0px);
-    }
-    100% {
-      transform: translateX(0px);
+    > p {
+      margin-top: 10px;
+      font-weight: 600;
+      font-size: 20px;
+      color: #2b2b2b;
+      font-weight: 700;
     }
   }
 
-  @keyframes galleryMovement {
-    0% {
-      transform: translateX(0px);
-    }
-    25% {
-      transform: translateX(-100vw);
-    }
-    50% {
-      transform: translateX(-200vw);
-    }
-    75% {
-      transform: translateX(-300vw);
-    }
-    100% {
-      transform: translateX(-400vw);
-    }
+  section.statCard1 {
+    top: -80px;
+    left: 300px;
+  }
+  section.statCard2 {
+    top: 150px;
+    left: 0px;
+  }
+  section.statCard3 {
+    bottom: -100px;
+    left: 250px;
+  }
+  section.statCard4 {
+    bottom: -80px;
+    right: 100px;
+  }
+  section.statCard5 {
+    top: 50px;
+    right: 0px;
+  }
+}
+
+/* For the Counter */
+.counter {
+  font-size: 2rem;
+  font-weight: bold;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+.counter.visible {
+  opacity: 1;
+}
+
+/* Keyframes Section */
+/* For show gallery */
+@keyframes textSlightMove {
+  0% {
+    transform: translateX(0px);
+  }
+  25% {
+    transform: translateX(-40px);
+  }
+  50% {
+    transform: translateX(-40px);
+  }
+  75% {
+    transform: translateX(0px);
+  }
+  100% {
+    transform: translateX(0px);
+  }
+}
+
+@keyframes galleryMovement {
+  0% {
+    transform: translateX(0px);
+  }
+  25% {
+    transform: translateX(-100vw);
+  }
+  50% {
+    transform: translateX(-200vw);
+  }
+  75% {
+    transform: translateX(-300vw);
+  }
+  100% {
+    transform: translateX(-400vw);
   }
 }
