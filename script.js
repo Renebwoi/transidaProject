@@ -1,3 +1,4 @@
+//$lf-ignore
 const counters = document.querySelectorAll(".counter");
 
 const startCount = (counter) => {
@@ -33,3 +34,7 @@ const observer = new IntersectionObserver(
 );
 
 counters.forEach((counter) => observer.observe(counter));
+
+let footerYearElement = document.querySelector("footer>article>p>span");
+
+footerYearElement.innerText = new Date().getFullYear();
