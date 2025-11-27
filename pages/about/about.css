@@ -1,0 +1,228 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  --special-orange: #ff5f15;
+  --special-blue: #293e9c;
+  font-family: "Poppins", sans-serif;
+}
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+section.top-bar {
+  background-color: var(--special-blue);
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 20px;
+}
+
+section.top-bar-left,
+section.top-bar-right {
+  display: flex;
+  align-items: center;
+  column-gap: 10px;
+}
+
+.thick-bar,
+.small-bar {
+  background-color: white;
+  width: 1px;
+  height: 30px;
+}
+
+section.top-bar-left > input[type="search"] {
+  border: none;
+  background-color: transparent;
+  color: white;
+  font-weight: 700;
+}
+section.top-bar-left > input[type="search"]::placeholder {
+  color: white;
+  font-weight: 700;
+  font-size: 15px;
+}
+section.top-bar-left > input[type="search"]:focus {
+  outline: none;
+}
+
+section.top-bar-right > p {
+  color: white;
+  font-weight: 700;
+}
+main {
+  display: flex;
+  flex-direction: column;
+  margin: 0px 10px;
+}
+main header {
+  display: flex;
+  justify-content: space-between;
+  /* width: 90%; */
+  margin: 20px 0px 0px 20px;
+  position: sticky;
+  top: 20px;
+}
+main header nav {
+  font-weight: 700;
+  color: white;
+  display: flex;
+  align-items: center;
+  column-gap: 20px;
+
+  button {
+    background-color: transparent;
+    padding: 5px;
+    color: white;
+    border: none;
+    font-weight: 700;
+  }
+}
+main header nav a {
+  color: white;
+  text-decoration: none;
+}
+
+main > section.heroSection {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-image: url(../../images/construction.webp);
+  /* background-image: linear-gradient(#1c1c1c, orange); */
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 500px;
+
+  color: white;
+
+  section.heroTinter {
+    background-image: linear-gradient(#020202ce, transparent);
+    width: 100%;
+    height: 700px;
+  }
+
+  section.heroText {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    row-gap: 20px;
+    margin-top: 150px;
+
+    h3 {
+      font-size: 24px;
+      font-weight: 700;
+    }
+    h1 {
+      font-size: 50px;
+      font-weight: 700;
+    }
+    p {
+      font-size: 20px;
+      font-weight: 500;
+      width: 50%;
+      text-align: center;
+    }
+    p.dotted-line {
+      letter-spacing: 5px;
+      font-size: 30px;
+    }
+
+    a {
+      text-decoration: none;
+      button {
+        background-color: var(--special-orange);
+        padding: 15px 70px;
+        text-align: center;
+        border: none;
+        position: relative;
+        overflow: hidden;
+        font-weight: 700;
+        display: flex;
+        align-items: center;
+        column-gap: 10px;
+
+        img {
+          width: 30px;
+          height: 30px;
+        }
+
+        div {
+          z-index: 100;
+          color: white;
+          position: relative;
+          font-size: 16px;
+        }
+      }
+      button::before {
+        content: " ";
+        color: white;
+        font-weight: 700;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-color: black;
+        left: -100%;
+        top: 0px;
+        transition: all 1s ease;
+      }
+      button:hover::before {
+        left: 0%;
+      }
+    }
+  }
+}
+
+main > section.companySection {
+    display: flex;
+    column-gap: 20px;
+    justify-content: space-between;
+    margin-top: 150px;
+    padding: 0px 30px;
+
+    img{
+        flex: 2;
+    }
+
+    section.info{
+        flex: 1;
+    > h4{
+        color: var(--special-orange);
+        font-size: 16px;
+    }
+    > h2{
+        font-size: 40px;
+    }
+
+    > article.companyAgeContainer{
+        display: flex;
+        column-gap: 10px;
+        justify-content: space-between;
+
+        > img{
+            width: 30px;
+            aspect-ratio: 1/1;
+        }
+
+        > article.companyAgeCard{
+            display: flex;
+            flex-direction: column;
+            row-gap: 20px;
+
+            color: var(--special-orange);
+
+            > h2{
+                > span {
+                    font-size: 40px;
+                }
+            }
+        }
+    }
+    }
+}
